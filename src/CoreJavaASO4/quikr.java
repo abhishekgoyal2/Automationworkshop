@@ -17,7 +17,7 @@ public class quikr {
 		
 		WebDriver driver;
 		driver =new FirefoxDriver();
-		driver.get("http://www.quikr.com");
+		driver.get("http://noida.quikr.com/");
 		driver.manage().window().maximize();
 	driver.findElement(By.xpath(".//*[@id='query']")).sendKeys("Car");
 		
@@ -30,12 +30,13 @@ public class quikr {
 		 mousehoverSearch.perform();
 		 Actions mousehoverSearch1 = builder.moveToElement(submit_search).click(); 
 
- mousehoverSearch1.perform();
- 
+		 mousehoverSearch1.perform();
+//  driver.findElement(By.xpath("html/body/header/div[3]/div/div/div[2]/a/i[2]"));
 
 		 System.out.println("Search pass able to find submit element");
 		 
-driver.wait(2000);
+		 
+
 //		try {
 //			Thread.sleep(1000);
 //		} catch (InterruptedException e) {
