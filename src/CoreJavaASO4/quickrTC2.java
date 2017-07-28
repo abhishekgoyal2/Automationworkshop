@@ -46,10 +46,36 @@ public class quickrTC2 {
 
 		 mousehoverSearch1.perform();
 		
+		 WebElement Brandnamedrop =driver.findElement(By.xpath(".//*[@class='dropDowniconWrapper']"));
+		 
+		 Brandnamedrop.click();
+		 
+		 WebElement Brandname =driver.findElement(By.xpath("//input[@type='radio' and @value='Honda']"));
+		 Thread.sleep(2000);	
+		 
+		 Brandname.click();
+		 
+		 Thread.sleep(4000);	
+		 
+//WebElement YearSelecteddrop =driver.findElement(By.xpath(".//*[@class='dropDowniconWrapper']"));
+//		 
+//YearSelecteddrop.click();
+//		 
+//		 WebElement YearRegistration =driver.findElement(By.xpath("//input[@type='radio' and @value='2013']"));
+//		 Thread.sleep(2000);	
+//		 
+//		 YearRegistration.click();
+//		 
+//		 Thread.sleep(4000);	
+		 
+		//input[@type='radio' and @value='Honda']
 		 
 //		 BrandnameSearch.click();
 		 
- Thread.sleep(4000);	
+
+// driver.findElement(By.xpath(".//*[@class='Brand_name_single_list']")).click();
+ 
+// Thread.sleep(4000);
 		
 //		if(ele.isDisplayed())
 //		{
@@ -59,7 +85,7 @@ public class quickrTC2 {
 
 
 
-	driver.quit();
+//	driver.quit();
 
 	}
 
