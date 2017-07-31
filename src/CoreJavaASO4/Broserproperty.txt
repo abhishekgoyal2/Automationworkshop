@@ -1,0 +1,2 @@
+Browser=FireFox
+url=http://noida.quikr.com/
