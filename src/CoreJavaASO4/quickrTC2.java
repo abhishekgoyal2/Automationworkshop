@@ -1,5 +1,7 @@
 package CoreJavaASO4;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,11 +12,15 @@ import org.openqa.selenium.interactions.Actions;
 
 public class quickrTC2 {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 		WebDriver driver;
 		driver =new FirefoxDriver();
-		driver.get("http://noida.quikr.com/");
+		
+			String Appurl =Loadproperty.getvalue("url");
+		
+		
+driver.get(Appurl);
 		driver.manage().window().maximize();
 		
 		 
