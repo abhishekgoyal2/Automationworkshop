@@ -38,6 +38,14 @@ public class RobotKeyEvent {
 		robot.keyPress(KeyEvent.VK_1);
 		Thread.sleep(500);
 		robot.keyRelease(KeyEvent.VK_CAPS_LOCK);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_S);
+		robot.keyPress(KeyEvent.VK_R);
+		robot.keyPress(KeyEvent.VK_1);
+		robot.keyRelease(KeyEvent.VK_R);
+		robot.keyRelease(KeyEvent.VK_1);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		
 //		01 
 		 
 	}
