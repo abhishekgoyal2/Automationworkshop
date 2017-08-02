@@ -20,14 +20,13 @@ public class labqashop {
 driver.get(Appurl);
 driver.manage().window().maximize();
 	    
-	    System.out.println("Click on Quick Find and search mouse");
+	    //Quick Find and more 
 	    
-	    driver.findElement(By.name("keywords")).sendKeys("mouse");	    
+	    driver.findElement(By.xpath(".//*[@name='keywords']")).sendKeys("mouse");	    
 	    	   	   
-	    
 	    Thread.sleep(200);
 	    
-        System.out.println("Search mouse");
+   
 	    	    	    
 	    driver.findElement(By.xpath(".//input[@alt='Quick Find']")).click();
 	    
@@ -35,9 +34,9 @@ driver.manage().window().maximize();
 	    
 	    Thread.sleep(200);
 	    
-	    System.out.println("Click on Buy Now");
+	    //Buy the item
 	    
-	    driver.findElement(By.xpath("(//span[text()='Buy Now'])[1]")).click();
+	    driver.findElement(By.xpath(".//span[contains(text(),'Buy Now')]")).click();
 
 	    
 	    Thread.sleep(200);
@@ -53,7 +52,7 @@ driver.manage().window().maximize();
 	    else
 	        System.err.println("Text is not present in the page");
 	    	   	
-	    driver.findElement(By.name("cart_quantity[]")).clear();
+  driver.findElement(By.name("cart_quantity[]")).clear();
 	    driver.findElement(By.name("cart_quantity[]")).sendKeys("2");
 	    
 	    Thread.sleep(200);
