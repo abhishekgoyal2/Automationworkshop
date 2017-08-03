@@ -1,0 +1,73 @@
+---
+http://www.quikr.com
+
+html/body/header/div[3]/div/div/div[3]/button
+
+html/body/header/div[3]/div/div/div[3]/button
+
+----
+All India drop down:
+
+html/body/header/div[3]/div/div/div[2]/a/i[2]
+
+Post Free Add :
+ 	 	 	
+ 	html/body/header/div[3]/div/div/div[4]/ul/li[2]/a
+car and bikes
+
+html/body/div[2]/div[8]/div[1]/div[2]/div[3]
+
+car
+html/body/div[2]/div[8]/div[5]/div[2]/div/ul/li[2]/a
+---
+
+html/body/div[2]/div[8]/div[5]/div[2]/div/ul/li[2]/a
+--
+
+html/body/div[2]/div[8]/div[5]/div[2]/div/ul/li[2]/a[contains(text(),'Cars')]
+-----------
+
+
+//div/ul/li[2]/a[contains(text(),'Cars')]
+
+--------
+
+Post free Add :
+
+Brand Name : 
+html/body/div[2]/form/div/div/table/tbody/tr/td[2]/div/div[4]/div[5]/div[1]/div[2]/input[2]
+
+html/body/div[2]/form/div/div/table/tbody/tr/td[2]/div/div[4]/div[5]/div[1]/div[2]/div[1]/span
+--
+
+
+html/body/div[2]/form/div/div/table/tbody/tr/td[2]/div/div[4]/div[5]/div[1]/div[2]/div[4]/div[2]/div/label[3]/input
+
+
+Radio button :
+
+
+.//*[@id='Brand_name_searchBox']
+
+.//*[@id='Brand_name3']
+
+-----------
+
+.//*[@class='dropDownicon']
+
+.//*[@class='dropDowniconWrapper']
+
+.//*[@id='Brand_name_selected']
+
+//input[@type='radio' and @value='Honda']
+
+----
+
+.//*[@id='Brand_name_selected' and @lblname='Brand Name']
+
+
+.//*[@id='Year_selected' and @lblname='Year of Registration']
+
+//input[@type='radio' and @value='2013']
+
+-----

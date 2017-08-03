@@ -1,0 +1,15 @@
+--
+
+quick find :
+
+html/body/div[1]/div[4]/div[3]/div[2]/form/input[1]
+
+.//*[@name='keywords']
+
+search glass:
+html/body/div[1]/div[4]/div[3]/div[2]/form/input[4]
+
+.//input[@alt='Quick Find']
+
+Buy now :
+html/body/div[1]/div[3]/div/div[1]/div[1]/div[2]/table/tbody/tr[1]/td[4]/span/a/span[2
