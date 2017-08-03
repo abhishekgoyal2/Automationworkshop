@@ -36,7 +36,7 @@ Year
 
 .//*[@id='usernamereg-year']
 Gender
-
+.//*[@id='usernamereg-freeformGender']
 
 Continue:
 
