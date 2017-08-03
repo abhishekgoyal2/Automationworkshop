@@ -1,0 +1,44 @@
+
+--------
+//sign in:
+
+.//*[@id='uh-signin']
+
+/Signup:
+
+.//*[@id='createacc']
+
+First Name:
+
+.//*[@id='usernamereg-firstName']
+
+SurName:
+
+.//*[@id='usernamereg-lastName']
+
+Email id :
+.//*[@id='usernamereg-yid']
+
+Password:
+.//*[@id='usernamereg-password']
+
+mobile phone:
+
+.//*[@id='usernamereg-phone']
+
+BirthMonth
+.//*[@id='usernamereg-month']
+
+Day
+
+.//*[@id='usernamereg-day']
+Year
+
+.//*[@id='usernamereg-year']
+Gender
+
+
+Continue:
+
+
+.//*[@id='reg-submit-button']

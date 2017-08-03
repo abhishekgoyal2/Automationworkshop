@@ -1,2 +1,4 @@
 Browser=FireFox
-url=http://noida.quikr.com/
+ url2=http://noida.quikr.com/
+url1=http://labqashop.qacampus.com
+url=https://in.yahoo.com/?p=us

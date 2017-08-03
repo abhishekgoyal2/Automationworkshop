@@ -1,0 +1,4 @@
+CQok button :
+html/body/div[4]/div[2]/div/div/div[2]/a/span
+
+.//*[@class='button ok-button']
