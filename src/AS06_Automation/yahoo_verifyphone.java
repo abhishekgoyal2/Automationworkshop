@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import CoreJavaASO4.Loadproperty;
 
@@ -19,10 +20,12 @@ public class yahoo_verifyphone {
 		
 		
 driver.get(Appurl);
+Thread.sleep(2000);
 driver.manage().window().maximize();
+Thread.sleep(1000);
 //sign in:
 driver.findElement(By.xpath(".//*[@id='uh-signin']")).click();
-
+Thread.sleep(2000);
 //Signup:
 driver.findElement(By.xpath(".//*[@id='createacc']")).click();
 Thread.sleep(2000);
@@ -40,12 +43,15 @@ Thread.sleep(2000);
 driver.findElement(By.xpath(".//*[@id='usernamereg-password']")).sendKeys("Abcd_nyc1");
 //mobile phone
 Thread.sleep(2000);
-driver.findElement(By.xpath(".//*[@id='usernamereg-phone']")).sendKeys("8581234234");
+driver.findElement(By.xpath(".//*[@id='usernamereg-phone']")).sendKeys("8750360292");
+
 //BirthMonth
 Thread.sleep(2000);
-	
-driver.findElement(By.xpath(".//*[@id='usernamereg-month']")).click();
-//Day
+	Select Month = new Select(driver.findElement(By.xpath(".//*[@id='usernamereg-month']")));
+
+	Month.selectByVisibleText("February");
+
+	//Day
 Thread.sleep(2000);
 driver.findElement(By.xpath(".//*[@id='usernamereg-day']")).sendKeys("01");
 
@@ -57,6 +63,10 @@ Thread.sleep(2000);
 //Continue
 driver.findElement(By.xpath(".//*[@id='reg-submit-button']")).click();
 Thread.sleep(2000);
+
+if(driver.getPageSource().contains("@92"));
+System.out.println("Text message as expected");
+
 	}
 
 }
