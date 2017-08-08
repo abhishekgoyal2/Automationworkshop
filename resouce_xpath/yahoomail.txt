@@ -28,6 +28,7 @@ mobile phone:
 
 BirthMonth
 .//*[@id='usernamereg-month']
+February
 
 Day
 

@@ -1,3 +1,4 @@
+//
 package AS_06_Junit;
 
 import org.junit.Test;

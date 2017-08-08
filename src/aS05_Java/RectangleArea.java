@@ -14,3 +14,6 @@ int Area=l*b;
 		System.out.print("Area of rectangle "+"= " + Area);
 	}
 }
+
+
+//
