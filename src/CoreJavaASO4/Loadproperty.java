@@ -18,6 +18,7 @@ public class Loadproperty {
 		
 		prop.load(fis);
 		String str1=prop.getProperty(str);
+		System.out.println(str1);
 		
 return str1;
 		

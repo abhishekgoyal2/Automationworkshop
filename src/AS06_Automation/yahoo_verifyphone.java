@@ -17,13 +17,13 @@ public class yahoo_verifyphone {
 		driver =new FirefoxDriver();
 		
 			String Appurl =Loadproperty.getvalue("url");
-		String Signin = Loadproperty.getvalue("sign in");
+		String Signin = Loadproperty.getvalue("signin");
 		String Signup = Loadproperty.getvalue("Signup");	
-		String First_Name = Loadproperty.getvalue("First Name");	
-		String Last_Name = Loadproperty.getvalue("Last Name");
-		String Email_id = Loadproperty.getvalue("Email id");	
+		String First_Name = Loadproperty.getvalue("FirstName");	
+		String Last_Name = Loadproperty.getvalue("LastName");
+		String Email_id = Loadproperty.getvalue("Emailid");	
 		String Password = Loadproperty.getvalue("Password");	
-		String mobile_phone = Loadproperty.getvalue("mobile phone");	
+		String mobile_phone = Loadproperty.getvalue("mobilephone");	
 		String Monthstr = Loadproperty.getvalue("Month");	
 		String Day = Loadproperty.getvalue("Day");	
 		String Year = Loadproperty.getvalue("Year");	
@@ -79,6 +79,7 @@ Thread.sleep(2000);
 //if(driver.getPageSource().contains("@92"));
 System.out.println("Text message as expected");
 
+	driver.quit();
 	}
 
 }

@@ -2,13 +2,13 @@ Browser=FireFox
  url2=http://noida.quikr.com/
 url1=http://labqashop.qacampus.com
 url=https://in.yahoo.com/?p=us
-sign in=.//*[@id='uh-signin']
+signin=.//*[@id='uh-signin']
 Signup=.//*[@id='createacc']
-First Name =.//*[@id='usernamereg-firstName']
-Last Name =.//*[@id='usernamereg-firstName']
-Email id =.//*[@id='usernamereg-yid']
+FirstName =.//*[@id='usernamereg-firstName']
+LastName =.//*[@id='usernamereg-lastName']
+Emailid =.//*[@id='usernamereg-yid']
 Password =.//*[@id='usernamereg-password']
-mobile phone =.//*[@id='usernamereg-phone']
+mobilephone =.//*[@id='usernamereg-phone']
 Month =.//*[@id='usernamereg-month']
 
 Day=.//*[@id='usernamereg-day']
