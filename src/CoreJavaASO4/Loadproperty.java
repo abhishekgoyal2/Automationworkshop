@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class Loadproperty {
 	
-	static String filelocation="C:/Users/abhishek.goyal2/workspace/Automation_Assignment/src/CoreJavaASO4/Broserproperty.txt";
+	static String filelocation="C:/Users/abhishek.goyal2/workspace/Automation_Assignment/resouce_xpath/Broserproperty.txt";
  String str1=null;
 	
 	public static String getvalue(String str) throws IOException
