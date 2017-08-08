@@ -64,7 +64,7 @@ Thread.sleep(2000);
 driver.findElement(By.xpath(".//*[@id='reg-submit-button']")).click();
 Thread.sleep(2000);
 
-if(driver.getPageSource().contains("@92"));
+//if(driver.getPageSource().contains("@92"));
 System.out.println("Text message as expected");
 
 	}
