@@ -17,51 +17,63 @@ public class yahoo_verifyphone {
 		driver =new FirefoxDriver();
 		
 			String Appurl =Loadproperty.getvalue("url");
+		String Signin = Loadproperty.getvalue("sign in");
+		String Signup = Loadproperty.getvalue("Signup");	
+		String First_Name = Loadproperty.getvalue("First Name");	
+		String Last_Name = Loadproperty.getvalue("Last Name");
+		String Email_id = Loadproperty.getvalue("Email id");	
+		String Password = Loadproperty.getvalue("Password");	
+		String mobile_phone = Loadproperty.getvalue("mobile phone");	
+		String Monthstr = Loadproperty.getvalue("Month");	
+		String Day = Loadproperty.getvalue("Day");	
+		String Year = Loadproperty.getvalue("Year");	
+		String Continue = Loadproperty.getvalue("Continue");
+		String Gender = Loadproperty.getvalue("Gender");
+
 		
-		
-driver.get(Appurl);
+	driver.get(Appurl);
 Thread.sleep(2000);
 driver.manage().window().maximize();
 Thread.sleep(1000);
 //sign in:
-driver.findElement(By.xpath(".//*[@id='uh-signin']")).click();
+driver.findElement(By.xpath(Signin)).click();
 Thread.sleep(2000);
 //Signup:
-driver.findElement(By.xpath(".//*[@id='createacc']")).click();
+driver.findElement(By.xpath(Signup)).click();
 Thread.sleep(2000);
 //First Name:
-driver.findElement(By.xpath(".//*[@id='usernamereg-firstName']")).sendKeys("abh");
+driver.findElement(By.xpath(First_Name)).sendKeys("abh");
 Thread.sleep(2000);
 //Last Name:
-driver.findElement(By.xpath(".//*[@id='usernamereg-lastName']")).sendKeys("goi");
+driver.findElement(By.xpath(Last_Name)).sendKeys("goi");
 Thread.sleep(2000);
 //Email id
-driver.findElement(By.xpath(".//*[@id='usernamereg-yid']")).sendKeys("abcd_nyz1");
+driver.findElement(By.xpath(Email_id)).sendKeys("abcd_nyz1");
 //Password:
 Thread.sleep(2000);
 
-driver.findElement(By.xpath(".//*[@id='usernamereg-password']")).sendKeys("Abcd_nyc1");
+driver.findElement(By.xpath(Password)).sendKeys("Abcd_nyc1");
 //mobile phone
 Thread.sleep(2000);
-driver.findElement(By.xpath(".//*[@id='usernamereg-phone']")).sendKeys("8750360292");
+driver.findElement(By.xpath(mobile_phone)).sendKeys("8750360292");
 
 //BirthMonth
 Thread.sleep(2000);
-	Select Month = new Select(driver.findElement(By.xpath(".//*[@id='usernamereg-month']")));
+	Select Month = new Select(driver.findElement(By.xpath(Monthstr)));
 
 	Month.selectByVisibleText("February");
 
 	//Day
 Thread.sleep(2000);
-driver.findElement(By.xpath(".//*[@id='usernamereg-day']")).sendKeys("01");
+driver.findElement(By.xpath(Day)).sendKeys("01");
 
 //Year
-driver.findElement(By.xpath(".//*[@id='usernamereg-year']")).sendKeys("2012");
+driver.findElement(By.xpath(Year)).sendKeys("2012");
 Thread.sleep(2000);
 //Gender
 
 //Continue
-driver.findElement(By.xpath(".//*[@id='reg-submit-button']")).click();
+driver.findElement(By.xpath(Continue)).click();
 Thread.sleep(2000);
 
 //if(driver.getPageSource().contains("@92"));

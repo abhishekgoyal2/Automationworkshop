@@ -5,6 +5,7 @@ url=https://in.yahoo.com/?p=us
 sign in=.//*[@id='uh-signin']
 Signup=.//*[@id='createacc']
 First Name =.//*[@id='usernamereg-firstName']
+Last Name =.//*[@id='usernamereg-firstName']
 Email id =.//*[@id='usernamereg-yid']
 Password =.//*[@id='usernamereg-password']
 mobile phone =.//*[@id='usernamereg-phone']
