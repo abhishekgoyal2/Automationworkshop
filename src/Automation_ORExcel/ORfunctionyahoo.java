@@ -88,17 +88,17 @@ public class ORfunctionyahoo {
 				cell = (XSSFCell) cells.next();
 
 				if (cell.getCellType() == XSSFCell.CELL_TYPE_STRING) {
-					getKey("cell.getStringCellValue() ");
+					getKey(cell.getStringCellValue());
 					
 //					System.out.print(cell.getStringCellValue() + " ");
 				} 
 				else if (cell.getCellType() == XSSFCell.CELL_TYPE_NUMERIC) {
-					getKey("cell.getNumericCellValue() ");
-//					System.out.print(cell.getNumericCellValue() + " ");
+					
+				System.out.print(cell.getNumericCellValue() + " ");
 				} 
 				else if (cell.getCellType() == XSSFCell.CELL_TYPE_BOOLEAN) {
-					getKey("cell.getBooleanCellValue() ");
-//					System.out.print(cell.getBooleanCellValue() + " ");
+					
+				System.out.print(cell.getBooleanCellValue() + " ");
 
 				} 
 //				else { // //Here if require, we can also add below methods to
