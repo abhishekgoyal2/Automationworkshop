@@ -19,8 +19,10 @@ public class ORfunctionyahoo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ReadXlsx readXlsx = new ReadXlsx();
-		readXlsx.readXLSXFile("D:/automationXpath/Yahoo_xpath.xlsx");	
+//		ReadXlsx readXlsx = new ReadXlsx();
+//		readXlsx.readXLSXFile("D:/automationXpath/Yahoo_xpath.xlsx");	
+		
+		readXLSXFile("D:/automationXpath/Yahoo_xpath.xlsx");
 //getKey("username");
 //getlocator("id");
 //getlocatorvalue("mmm//");
@@ -51,7 +53,8 @@ public class ORfunctionyahoo {
 		
 	}
 	
-	public String readXLSXFile(String fileName) {
+	@SuppressWarnings({ "deprecation", "resource", "rawtypes" })
+	public static String readXLSXFile(String fileName) {
 		InputStream XlsxFileToRead = null;
 		XSSFWorkbook workbook = null;
 		try {
@@ -72,6 +75,7 @@ public class ORfunctionyahoo {
 		XSSFCell cell;
 		
 		//Iterating all the rows in the sheet
+		@SuppressWarnings("rawtypes")
 		Iterator rows = sheet.rowIterator();
 
 		while (rows.hasNext()) {
@@ -86,15 +90,15 @@ public class ORfunctionyahoo {
 				if (cell.getCellType() == XSSFCell.CELL_TYPE_STRING) {
 					getKey("cell.getStringCellValue() ");
 					
-					System.out.print(cell.getStringCellValue() + " ");
+//					System.out.print(cell.getStringCellValue() + " ");
 				} 
 				else if (cell.getCellType() == XSSFCell.CELL_TYPE_NUMERIC) {
 					getKey("cell.getNumericCellValue() ");
-					System.out.print(cell.getNumericCellValue() + " ");
+//					System.out.print(cell.getNumericCellValue() + " ");
 				} 
 				else if (cell.getCellType() == XSSFCell.CELL_TYPE_BOOLEAN) {
 					getKey("cell.getBooleanCellValue() ");
-					System.out.print(cell.getBooleanCellValue() + " ");
+//					System.out.print(cell.getBooleanCellValue() + " ");
 
 				} 
 //				else { // //Here if require, we can also add below methods to
