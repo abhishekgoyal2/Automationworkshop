@@ -31,6 +31,7 @@ public class ORfunctionyahoo {
 	static String key;
 	static String locator;
 	static String locatorvalue;
+	static String sheetname;
 
 	public static String getKey(String Key)
 	{
@@ -53,6 +54,13 @@ public class ORfunctionyahoo {
 		
 	}
 	
+	public static String getsheetkey(String Sheetname,String key)
+	{
+		System.out.println(Sheetname);
+		return (Sheetname);
+		
+	}
+	
 	@SuppressWarnings({ "deprecation", "resource", "rawtypes" })
 	public static String readXLSXFile(String fileName) {
 		InputStream XlsxFileToRead = null;
@@ -71,6 +79,19 @@ public class ORfunctionyahoo {
 		//getting the first sheet from the workbook using sheet name. 
 		// We can also pass the index of the sheet which starts from '0'.
 		XSSFSheet sheet = workbook.getSheet("Sheet1");
+		
+		System.out.println(sheet.getSheetName());
+		
+//		int sheetcount =0;
+//		Iterator sheets = workbook.iterator();
+//		while(sheets.hasNext())
+//				{
+//			sheetcount++;
+//			
+//			System.out.println(sheetcount);
+//		}
+//		
+		
 		XSSFRow row;
 		XSSFCell cell;
 		
@@ -114,7 +135,9 @@ public class ORfunctionyahoo {
 //			} catch (IOException e) {
 //				e.printStackTrace();
 //			}
+		
 		}
+		
 		return fileName;
 	}
 	
