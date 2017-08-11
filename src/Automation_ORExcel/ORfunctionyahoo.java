@@ -78,18 +78,31 @@ public class ORfunctionyahoo {
 
 		//getting the first sheet from the workbook using sheet name. 
 		// We can also pass the index of the sheet which starts from '0'.
-		XSSFSheet sheet = workbook.getSheet("Sheet1");
 		
-		System.out.println(sheet.getSheetName());
+		XSSFSheet sheetfile ;
 		
-//		int sheetcount =0;
-//		Iterator sheets = workbook.iterator();
-//		while(sheets.hasNext())
-//				{
-//			sheetcount++;
-//			
-//			System.out.println(sheetcount);
-//		}
+		String sheet = null; 
+//		= workbook.getSheet("");
+//		String sheetname=sheet.getSheetName();
+//		
+//		
+//		
+//		System.out.println(sheet.getSheetName());
+		
+		XSSFSheet sheetcount ;
+		Iterator sheets = workbook.iterator();
+		while(sheets.hasNext())
+				{
+			sheet = workbook.sheetIterator().next().getSheetName();
+			
+			if(sheet!="")
+				{
+				sheetcount = (XSSFSheet) sheets.next();
+				
+				 sheetfile = workbook.getSheet("sheet.getSheetName()");
+				 System.out.println(sheet);
+				System.out.println(sheetcount);
+			
 //		
 		
 		XSSFRow row;
@@ -97,7 +110,7 @@ public class ORfunctionyahoo {
 		
 		//Iterating all the rows in the sheet
 		@SuppressWarnings("rawtypes")
-		Iterator rows = sheet.rowIterator();
+		Iterator rows = sheetfile.rowIterator();
 
 		while (rows.hasNext()) {
 			row = (XSSFRow) rows.next();
@@ -138,6 +151,8 @@ public class ORfunctionyahoo {
 		
 		}
 		
+				}
+				}
 		return fileName;
 	}
 	
