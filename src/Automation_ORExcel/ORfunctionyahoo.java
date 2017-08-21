@@ -75,7 +75,7 @@ public class ORfunctionyahoo {
 		
 	}
 	
-	@SuppressWarnings({ "deprecation", "resource", "rawtypes" })
+	@SuppressWarnings({ "deprecation", "rawtypes" })
 	
 	public static String readXLSXFile(String fileName) {
 		
@@ -103,22 +103,22 @@ public class ORfunctionyahoo {
 		
 		
 		
-		Iterator sheets = workbook.iterator();
-		while(sheets.hasNext())
-				{
-			sheet = workbook.sheetIterator().next().getSheetName();
-//			sheetcount = (XSSFSheet) sheets.next();
-			if(sheet!="")
-				{
-				
-				
-				 sheetfile = workbook.getSheet("sheet.getSheetName()");
-				 
-				 System.out.println(sheet);
-//				 System.out.println(sheetcount);
-					
-				System.out.println(sheetfile);
-			
+//		Iterator sheets = workbook.iterator();
+//   while(sheets.hasNext())
+//				{
+//			sheet = workbook.sheetIterator().next().getSheetName();
+////			sheetcount = (XSSFSheet) sheets.next();
+//			if(sheet!="")
+//				{
+//				
+//				
+//				 sheetfile = workbook.getSheet("sheet.getSheetName()");
+//				 
+//				 System.out.println(sheet);
+////				 System.out.println(sheetcount);
+//					
+//				System.out.println(sheetfile);
+//			
 //		
 		
 		XSSFRow row;
@@ -167,29 +167,96 @@ public class ORfunctionyahoo {
 		
 		}
 		
-				}
-				}
+//				}
+//				}
 		return fileName;
 	}
 	
-	public static void getsheetname(String sheetname) throws IOException
+	public static String getsheetname(String sheetname) throws IOException
 	{
 		XlsxFileToRead = new FileInputStream(sheetname);
 	
 				//Getting the workbook instance for xlsx file
 				workbook = new XSSFWorkbook(XlsxFileToRead);
 		// for each sheet in the workbook
+				
         for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
         	System.out.println("Sheet number: " + i);
 
             System.out.println("Sheet name: " + workbook.getSheetName(i));
             count++;
-        }
+            sheetfile = workbook.getSheet(workbook.getSheetName(i));
+            XSSFRow row;
+    		XSSFCell cell;
+    		
+    		//Iterating all the rows in the sheet
+    		@SuppressWarnings("rawtypes")
+    		
+    		Iterator rows = sheetfile.rowIterator();
+    		if(rows!=null)
+    		{
 
-        System.out.println("Total number of sheets : " + count);
-	}
+    		while (rows.hasNext()) {
+    			row = (XSSFRow) rows.next();
+    			{
+    			
+    			//Iterating all the cells of the current row
+    			@SuppressWarnings("rawtypes")
+				Iterator cells = row.cellIterator();
+
+    			while (cells.hasNext()) {
+    				cell = (XSSFCell) cells.next();
+
+    				if (cell.getCellType() == XSSFCell.CELL_TYPE_STRING) {
+    					getKey(cell.getStringCellValue());
+    					
+//    					System.out.print(cell.getStringCellValue() + " ");
+    				} 
+    				else if (cell.getCellType() == XSSFCell.CELL_TYPE_NUMERIC) {
+    					
+    				System.out.print(cell.getNumericCellValue() + " ");
+    				} 
+    				else if (cell.getCellType() == XSSFCell.CELL_TYPE_BOOLEAN) {
+    					
+    				System.out.print(cell.getBooleanCellValue() + " ");
+
+    				} 
+//    				else { // //Here if require, we can also add below methods to
+//    							// read the cell content
+//    							// XSSFCell.CELL_TYPE_BLANK
+//    							// XSSFCell.CELL_TYPE_FORMULA
+//    							// XSSFCell.CELL_TYPE_ERROR
+//    				}
+    			}
+    			System.out.println();
+//    			try {
+//    				XlsxFileToRead.close();
+//    			} catch (IOException e) {
+//    				e.printStackTrace();
+//    			}
+    		
+    		}
+    		
+//    				}
+//    				}
+    		
+    	}
+        
+        
+    		}
+        }
+        System.out.println("total number of sheets : "+ count);
+		return sheetname;
 	
+	
+
+//	System.out.println("Total number of sheets : " + count);
+
+        
+	}
 }
+	
+
 
 
 
