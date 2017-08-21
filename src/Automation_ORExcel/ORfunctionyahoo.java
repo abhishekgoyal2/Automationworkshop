@@ -45,6 +45,7 @@ public class ORfunctionyahoo {
 	static XSSFSheet sheetcount ;
 	
 	static String sheet = null; 
+	static int count=0;
 
 	public static String getKey(String Key)
 	{
@@ -179,10 +180,13 @@ public class ORfunctionyahoo {
 				workbook = new XSSFWorkbook(XlsxFileToRead);
 		// for each sheet in the workbook
         for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
+        	System.out.println("Sheet number: " + i);
 
             System.out.println("Sheet name: " + workbook.getSheetName(i));
+            count++;
         }
 
+        System.out.println("Total number of sheets : " + count);
 	}
 	
 }
