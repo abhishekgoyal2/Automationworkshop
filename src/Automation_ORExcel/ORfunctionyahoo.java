@@ -22,16 +22,29 @@ public class ORfunctionyahoo {
 //		ReadXlsx readXlsx = new ReadXlsx();
 //		readXlsx.readXLSXFile("D:/automationXpath/Yahoo_xpath.xlsx");	
 		
-		readXLSXFile("D:/automationXpath/Yahoo_xpath.xlsx");
+//		readXLSXFile("D:/automationXpath/Yahoo_xpath.xlsx");
+		try {
+			getsheetname("D:/automationXpath/Yahoo_xpath.xlsx");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 //getKey("username");
 //getlocator("id");
 //getlocatorvalue("mmm//");
 	}
 	
+	static InputStream XlsxFileToRead = null;
+	static XSSFWorkbook workbook = null;
 	static String key;
 	static String locator;
 	static String locatorvalue;
 	static String sheetname;
+	static XSSFSheet sheetfile ;
+	static XSSFSheet sheetcount ;
+	
+	static String sheet = null; 
 
 	public static String getKey(String Key)
 	{
@@ -62,9 +75,9 @@ public class ORfunctionyahoo {
 	}
 	
 	@SuppressWarnings({ "deprecation", "resource", "rawtypes" })
+	
 	public static String readXLSXFile(String fileName) {
-		InputStream XlsxFileToRead = null;
-		XSSFWorkbook workbook = null;
+		
 		try {
 			XlsxFileToRead = new FileInputStream(fileName);
 //	1		
@@ -79,9 +92,7 @@ public class ORfunctionyahoo {
 		//getting the first sheet from the workbook using sheet name. 
 		// We can also pass the index of the sheet which starts from '0'.
 		
-		XSSFSheet sheetfile ;
 		
-		String sheet = null; 
 //		= workbook.getSheet("");
 //		String sheetname=sheet.getSheetName();
 //		
@@ -89,19 +100,23 @@ public class ORfunctionyahoo {
 //		
 //		System.out.println(sheet.getSheetName());
 		
-		XSSFSheet sheetcount ;
+		
+		
 		Iterator sheets = workbook.iterator();
 		while(sheets.hasNext())
 				{
 			sheet = workbook.sheetIterator().next().getSheetName();
-			
+//			sheetcount = (XSSFSheet) sheets.next();
 			if(sheet!="")
 				{
-				sheetcount = (XSSFSheet) sheets.next();
+				
 				
 				 sheetfile = workbook.getSheet("sheet.getSheetName()");
+				 
 				 System.out.println(sheet);
-				System.out.println(sheetcount);
+//				 System.out.println(sheetcount);
+					
+				System.out.println(sheetfile);
 			
 //		
 		
@@ -156,6 +171,22 @@ public class ORfunctionyahoo {
 		return fileName;
 	}
 	
+	public static void getsheetname(String sheetname) throws IOException
+	{
+		XlsxFileToRead = new FileInputStream(sheetname);
+	
+				//Getting the workbook instance for xlsx file
+				workbook = new XSSFWorkbook(XlsxFileToRead);
+		// for each sheet in the workbook
+        for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
+
+            System.out.println("Sheet name: " + workbook.getSheetName(i));
+        }
+
+	}
+	
 }
+
+
 
 
