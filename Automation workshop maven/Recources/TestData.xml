@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<qaenv>
+	<local>
+		<url>https://noidcbun-dc.iii.com/iii/dc-noida/login/auth</url>
+		<username>iii</username>
+		<password>94484ern</password>
+		<SearchT>QTP</SearchT>
+	</local>
+	<dev>
+		<url>https://noidcbun-dc.iii.com/iii/dc-noida/login/auth</url>
+		<username>iii</username>
+		<password>94484ern</password>
+	</dev>
+</qaenv>
