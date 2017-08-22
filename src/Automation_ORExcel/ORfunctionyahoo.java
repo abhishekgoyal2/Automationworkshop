@@ -25,11 +25,12 @@ public class ORfunctionyahoo {
 //		readXLSXFile("D:/automationXpath/Yahoo_xpath.xlsx");
 		try {
 			getsheetname("D:/automationXpath/Yahoo_xpath.xlsx");
+		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+			
 //getKey("username");
 //getlocator("id");
 //getlocatorvalue("mmm//");
@@ -68,110 +69,34 @@ public class ORfunctionyahoo {
 		
 	}
 	
-	public static String getsheetkey(String Sheetname,String key)
+	public static String getsheetkey(String Sheetname,String key) throws IOException
+	
 	{
+		
+		XlsxFileToRead = new FileInputStream(sheetname);
+		
+		//Getting the workbook instance for xlsx file
+		workbook = new XSSFWorkbook(XlsxFileToRead);
+// for each sheet in the workbook
+		
+for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
+	System.out.println("Sheet number: " + i);
+
+    System.out.println("Sheet name: " + workbook.getSheetName(i));
+    count++;
+    sheetfile = workbook.getSheet(workbook.getSheetName(i));
+    XSSFRow row;
+	XSSFCell cell;
+	
 		System.out.println(Sheetname);
 		return (Sheetname);
 		
 	}
+return key;
 	
-	@SuppressWarnings({ "deprecation", "rawtypes" })
-	
-	public static String readXLSXFile(String fileName) {
-		
-		try {
-			XlsxFileToRead = new FileInputStream(fileName);
-//	1		
-			//Getting the workbook instance for xlsx file
-			workbook = new XSSFWorkbook(XlsxFileToRead);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		//getting the first sheet from the workbook using sheet name. 
-		// We can also pass the index of the sheet which starts from '0'.
-		
-		
-//		= workbook.getSheet("");
-//		String sheetname=sheet.getSheetName();
-//		
-//		
-//		
-//		System.out.println(sheet.getSheetName());
-		
-		
-		
-//		Iterator sheets = workbook.iterator();
-//   while(sheets.hasNext())
-//				{
-//			sheet = workbook.sheetIterator().next().getSheetName();
-////			sheetcount = (XSSFSheet) sheets.next();
-//			if(sheet!="")
-//				{
-//				
-//				
-//				 sheetfile = workbook.getSheet("sheet.getSheetName()");
-//				 
-//				 System.out.println(sheet);
-////				 System.out.println(sheetcount);
-//					
-//				System.out.println(sheetfile);
-//			
-//		
-		
-		XSSFRow row;
-		XSSFCell cell;
-		
-		//Iterating all the rows in the sheet
-		@SuppressWarnings("rawtypes")
-		Iterator rows = sheetfile.rowIterator();
-
-		while (rows.hasNext()) {
-			row = (XSSFRow) rows.next();
-			
-			//Iterating all the cells of the current row
-			Iterator cells = row.cellIterator();
-
-			while (cells.hasNext()) {
-				cell = (XSSFCell) cells.next();
-
-				if (cell.getCellType() == XSSFCell.CELL_TYPE_STRING) {
-					getKey(cell.getStringCellValue());
-					
-//					System.out.print(cell.getStringCellValue() + " ");
-				} 
-				else if (cell.getCellType() == XSSFCell.CELL_TYPE_NUMERIC) {
-					
-				System.out.print(cell.getNumericCellValue() + " ");
-				} 
-				else if (cell.getCellType() == XSSFCell.CELL_TYPE_BOOLEAN) {
-					
-				System.out.print(cell.getBooleanCellValue() + " ");
-
-				} 
-//				else { // //Here if require, we can also add below methods to
-//							// read the cell content
-//							// XSSFCell.CELL_TYPE_BLANK
-//							// XSSFCell.CELL_TYPE_FORMULA
-//							// XSSFCell.CELL_TYPE_ERROR
-//				}
-			}
-			System.out.println();
-//			try {
-//				XlsxFileToRead.close();
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-		
-		}
-		
-//				}
-//				}
-		return fileName;
 	}
 	
+		
 	public static String getsheetname(String sheetname) throws IOException
 	{
 		XlsxFileToRead = new FileInputStream(sheetname);
