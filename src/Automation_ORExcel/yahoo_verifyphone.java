@@ -1,12 +1,10 @@
 package Automation_ORExcel;
 
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
-
 import CoreJavaASO4.Loadproperty;
 
 public class yahoo_verifyphone {
@@ -17,7 +15,7 @@ public class yahoo_verifyphone {
 		WebDriver driver;
 		driver =new FirefoxDriver();
 		
-			String Appurl =Loadproperty.getvalue("url");
+		String Appurl =Loadproperty.getvalue("url");
 		String Signin = Loadproperty.getvalue("signin");
 		String Signup = Loadproperty.getvalue("Signup");	
 		String First_Name = Loadproperty.getvalue("FirstName");	

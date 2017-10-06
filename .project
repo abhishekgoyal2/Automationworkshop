@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>resouce_xpath/Yahoo_xpath.xlsx</name>
-			<type>1</type>
-			<location>D:/automationXpath/Yahoo_xpath.xlsx</location>
-		</link>
-	</linkedResources>
 </projectDescription>

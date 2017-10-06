@@ -24,7 +24,9 @@ public class ORfunctionyahoo {
 		
 //		readXLSXFile("D:/automationXpath/Yahoo_xpath.xlsx");
 		try {
-			getsheetname("D:/automationXpath/Yahoo_xpath.xlsx");
+//			getsheetname("D:/automationXpath/Yahoo_xpath.xlsx");
+			getsheetkey("D:/automationXpath/Yahoo_xpath.xlsx","Key");
+
 		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

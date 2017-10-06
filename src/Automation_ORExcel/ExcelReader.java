@@ -37,11 +37,12 @@ public static void main(String[] args) {
 	
 	 
 	 
-	 System.out.println( objMap.values());
+System.out.println( objMap.values());
 	 System.out.println( mastersheet.keySet());
-	 System.out.println( mastersheet.values());
 
-	 
+	 System.out.println( mastersheet.values());
+//	
+//	 
 //	loadExcelLines(fileName);
 	
 }
@@ -63,14 +64,19 @@ public static void main(String[] args) {
         	
             fis = new FileInputStream(fileName);
             // Create an excel workbook from the file system
+         
             XSSFWorkbook workBook = new XSSFWorkbook(fis);
             // Get the first sheet on the workbook.
             for (int i = 0; i < workBook.getNumberOfSheets(); i++)
             {
                 XSSFSheet sheet = workBook.getSheetAt(i);
+               
+                System.out.println(fileName);
+                
                 // XSSFSheet sheet = workBook.getSheetAt(0);
+               
                 sheetName = workBook.getSheetName(i);
-
+                System.out.println( sheetName);
                 Iterator rows = sheet.rowIterator();
                 while (rows.hasNext())
                 {

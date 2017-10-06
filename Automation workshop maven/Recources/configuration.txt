@@ -1,5 +1,0 @@
-#browser=firefox
-browser=chorme
-url=http://www.msn.com/
-xmlf=Recources//TestData.xml
-or=Recources//OR1.xlsx
