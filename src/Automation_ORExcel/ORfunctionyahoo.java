@@ -24,8 +24,8 @@ public class ORfunctionyahoo {
 		
 //		readXLSXFile("D:/automationXpath/Yahoo_xpath.xlsx");
 		try {
-//			getsheetname("D:/automationXpath/Yahoo_xpath.xlsx");
-			getsheetkey("D:/automationXpath/Yahoo_xpath.xlsx","Key");
+			getsheetname("D:/automationXpath/Yahoo_xpath.xlsx");
+//			getsheetkey("D:/automationXpath/Yahoo_xpath.xlsx","Key");
 
 		
 		} catch (IOException e) {
@@ -71,32 +71,32 @@ public class ORfunctionyahoo {
 		
 	}
 	
-	public static String getsheetkey(String Sheetname,String key) throws IOException
-	
-	{
-		
-		XlsxFileToRead = new FileInputStream(sheetname);
-		
-		//Getting the workbook instance for xlsx file
-		workbook = new XSSFWorkbook(XlsxFileToRead);
-// for each sheet in the workbook
-		
-for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
-	System.out.println("Sheet number: " + i);
-
-    System.out.println("Sheet name: " + workbook.getSheetName(i));
-    count++;
-    sheetfile = workbook.getSheet(workbook.getSheetName(i));
-    XSSFRow row;
-	XSSFCell cell;
-	
-		System.out.println(Sheetname);
-		return (Sheetname);
-		
-	}
-return key;
-	
-	}
+//	public static String getsheetkey(String Sheetname,String key) throws IOException
+//	
+//	{
+//		
+//		XlsxFileToRead = new FileInputStream(sheetname);
+//		
+//		//Getting the workbook instance for xlsx file
+//		workbook = new XSSFWorkbook(XlsxFileToRead);
+//// for each sheet in the workbook
+//		
+//for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
+//	System.out.println("Sheet number: " + i);
+//
+//    System.out.println("Sheet name: " + workbook.getSheetName(i));
+//    count++;
+//    sheetfile = workbook.getSheet(workbook.getSheetName(i));
+//    XSSFRow row;
+//	XSSFCell cell;
+//	
+//		System.out.println(Sheetname);
+//		return (Sheetname);
+//		
+//	}
+//return key;
+//	
+//	}
 	
 		
 	public static String getsheetname(String sheetname) throws IOException

@@ -2,6 +2,7 @@ package aS05_Automation;
 import java.io.IOException;
 
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,6 +13,7 @@ public class labqashop {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		WebDriver driver;
+		System.setProperty("webdriver.gecko.driver", "D:/software/geckodriver-v0.19.0-win64/geckodriver.exe");
 		driver =new FirefoxDriver();
 		
 			String Appurl =Loadproperty.getvalue("url");

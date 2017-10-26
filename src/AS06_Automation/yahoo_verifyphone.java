@@ -14,6 +14,7 @@ public class yahoo_verifyphone {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		WebDriver driver;
+		System.setProperty("webdriver.gecko.driver", "D:/software/geckodriver-v0.19.0-win64/geckodriver.exe");
 		driver =new FirefoxDriver();
 		
 			String Appurl =Loadproperty.getvalue("url");
