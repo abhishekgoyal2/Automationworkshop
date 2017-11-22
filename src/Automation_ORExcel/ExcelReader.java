@@ -17,12 +17,16 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+//import fileHandling.xObjectRepMa;
+
 public class ExcelReader {
 	 static Map<String, String> objMap = new HashMap<String, String>();
 	 static Map<String, Map> mastersheet = new HashMap<String, Map>();
 	  
 
-	 
+	 static String key;
+		static String locatorvalue;
+		static String locatortype;
 	static String sheetName ;
 	static FileInputStream fis;
 	XSSFWorkbook workBook ;
@@ -73,7 +77,8 @@ System.out.println( objMap.values());
             for (int i = 0; i < workBook.getNumberOfSheets(); i++)
             {
                 XSSFSheet sheet = workBook.getSheetAt(i);
-               
+				Map<String, xObjectRepMa> map = new HashMap<String, xObjectRepMa>();
+
                 System.out.println(fileName);
                 
                 // XSSFSheet sheet = workBook.getSheetAt(0);
@@ -100,7 +105,7 @@ System.out.println( objMap.values());
                 }
                 outerMap.put(sheetName, hashMap);
                 hashMap = new LinkedHashMap<Integer, List>();
-                
+                map.put(key,new xObjectRepMa(locatortype, locatorvalue));
             }
 
         }
