@@ -3,135 +3,137 @@ package Automation_ORExcel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
+
 import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+
+
 
 //import fileHandling.xObjectRepMa;
 
 public class ExcelReader {
-	 static Map<String, String> objMap = new HashMap<String, String>();
-	 static Map<String, Map> mastersheet = new HashMap<String, Map>();
-	  
+	static String key;
+	static String locatorvalue;
+	static String locatortype;
+	static Map<String,Map> mastersheet = new HashMap<String, Map>();
+	static String  sheetName;
 
-	 static String key;
-		static String locatorvalue;
-		static String locatortype;
-	static String sheetName ;
-	static FileInputStream fis;
-	XSSFWorkbook workBook ;
-	static String path="D:/automationXpath/Yahoo_xpath.xlsx";
-	static File fileName;
-
-public static void main(String[] args) {
+public static void main(String[] args) throws IOException {
 	// TODO Auto-generated method stub
-	 objMap.put("yahooOR", "signin");
-	 mastersheet.put("yahooOR",mastersheet);
-	 System.out.println( objMap.keySet());
+	ExcelReader.reader("yahooOR", "signin");
 	
-	 
-	 
-System.out.println( objMap.values());
-	 System.out.println( mastersheet.keySet());
+	}
 
-	 System.out.println( mastersheet.values());
-	 
-//	
-//	 
-//	loadExcelLines(fileName);
-	
+public static By reader(String sheet, String keyname) throws IOException
+{
+		File myFile = new File("D:/automationXpath/Yahoo_xpath.xlsx");
+		FileInputStream fis = new FileInputStream(myFile);
+		XSSFWorkbook myWorkBook = new XSSFWorkbook(fis);
+		int numberOfSheets = myWorkBook.getNumberOfSheets();
+		for (int i = 0; i < numberOfSheets; i++) 
+		{
+			Map<String, xObjectRepMa> map = new HashMap<String, xObjectRepMa>();
+			Sheet sheet1 = myWorkBook.getSheetAt(i); 
+			sheetName=myWorkBook.getSheetName(i);
+			Iterator<Row> rowIterator = sheet1.iterator();
+			
+			while(rowIterator.hasNext())
+			{
+				key ="";
+				locatortype="";
+				locatorvalue="";
+				
+				Row row = rowIterator.next();
+				Iterator<Cell> cellIterator=row.cellIterator();
+				
+				
+				while(cellIterator.hasNext())
+				{
+					Cell cell =cellIterator.next();
+						switch(cell.getCellType())
+						{
+							case Cell.CELL_TYPE_STRING:
+								if(key.equalsIgnoreCase(""))
+								{
+									key=cell.getStringCellValue().trim();
+								}
+								else if(locatortype.equalsIgnoreCase(""))
+								{
+									locatortype=cell.getStringCellValue().trim();
+								}
+								else if(locatorvalue.equalsIgnoreCase(""))
+								{
+									locatorvalue=cell.getStringCellValue().trim();
+								}
+								else
+								{
+		    						System.out.println(cell.getStringCellValue());
+		    					}
+								break;
+								case Cell.CELL_TYPE_NUMERIC:
+	    						String nvalue=String.valueOf(cell.getNumericCellValue());
+	    						locatorvalue=nvalue.replaceAll("(?<=^\\d+)\\.0*$", "");
+	    						map.put(key,new xObjectRepMa(locatortype, locatorvalue));
+	    					}
+	    				} 
+				map.put(key,new xObjectRepMa(locatortype, locatorvalue));
+			}	
+			
+			mastersheet.put(sheetName, map );
+			
+					}
+				
+		fis.close();
+		
+String stepType;
+String stepValue;
+
+Map<String, xObjectRepMa> p = mastersheet.get(sheet);
+xObjectRepMa p1 = p.get(keyname);
+stepType=p1.getLocator();
+stepValue=p1.getLocatorvalue();
+
+
+By locator = null;
+switch(stepType)
+{
+case "id":
+	locator = By.id(stepValue);
+	break;
+case "name":
+	locator = By.name(stepValue);
+	break;
+case "cssSelector":
+	locator = By.cssSelector(stepValue);
+	break;
+case "linkText":
+	locator = By.linkText(stepValue);
+	break;
+case "partialLinkText":
+	locator = By.partialLinkText(stepValue);
+	break;
+case "tagName":
+	locator = By.tagName(stepValue);
+	break;
+case "xpath":
+	locator = By.xpath(stepValue);
+	break;
 }
 
-//
+System.out.println(locator);
+return locator;
 
-    public static HashMap loadExcelLines(File fileName)
-    {
-        // Used the LinkedHashMap and LikedList to maintain the order
-        HashMap<String, LinkedHashMap<Integer, List>> outerMap = new LinkedHashMap<String, LinkedHashMap<Integer, List>>();
-
-        LinkedHashMap<Integer, List> hashMap = new LinkedHashMap<Integer, List>();
-
-       
-        // Create an ArrayList to store the data read from excel sheet.
-        // List sheetData = new ArrayList();
-        
-        fileName=new File(path);
-        try
-        {
-        	
-            fis = new FileInputStream(fileName);
-            // Create an excel workbook from the file system
-         
-            XSSFWorkbook workBook = new XSSFWorkbook(fis);
-            // Get the first sheet on the workbook.
-            for (int i = 0; i < workBook.getNumberOfSheets(); i++)
-            {
-                XSSFSheet sheet = workBook.getSheetAt(i);
-				Map<String, xObjectRepMa> map = new HashMap<String, xObjectRepMa>();
-
-                System.out.println(fileName);
-                
-                // XSSFSheet sheet = workBook.getSheetAt(0);
-               
-                sheetName = workBook.getSheetName(i);
-                System.out.println( sheetName);
-                Iterator rows = sheet.rowIterator();
-                while (rows.hasNext())
-                {
-                    XSSFRow row = (XSSFRow) rows.next();
-                    Iterator cells = row.cellIterator();
-
-                    List data = new LinkedList();
-                    while (cells.hasNext())
-                    {
-                        XSSFCell cell = (XSSFCell) cells.next();
-                        cell.setCellType(Cell.CELL_TYPE_STRING);
-                        data.add(cell);
-                    }
-                    
-                    hashMap.put(row.getRowNum(),data);
-
-                    // sheetData.add(data);
-                }
-                outerMap.put(sheetName, hashMap);
-                hashMap = new LinkedHashMap<Integer, List>();
-                map.put(key,new xObjectRepMa(locatortype, locatorvalue));
-            }
-
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        finally
-        {
-            if (fis != null)
-            {
-                try
-                {
-                    fis.close();
-                }
-                catch (IOException e)
-                {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return outerMap;
+}
 
     }
-}
+
 
 
