@@ -21,7 +21,19 @@ public class spiceHandledroddown {
 			Thread.sleep(2500);
 			s.selectByValue("2");
 			Thread.sleep(2500);
-			System.out.println("test pass");
+			//*[@id='ctl00_mainContent_ddl_originStation1_CTXT']
+			
+			driver.findElement(By.xpath("//*[@id='ctl00_mainContent_ddl_originStation1_CTXT']")).click();
+			
+			Thread.sleep(2500);
+		driver.findElement(By.xpath("//a[@value='GOI']")).click();
+		
+		Thread.sleep(2500);
+		System.out.println("test pass");
+		driver.findElement(By.xpath("(//a[@value='DEL'])[2]")).click();
+		Thread.sleep(2500);
+		System.out.println("test pass");
+			
 			driver.quit();
 			
 	}
