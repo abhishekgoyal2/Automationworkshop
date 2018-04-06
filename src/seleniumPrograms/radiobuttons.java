@@ -15,7 +15,6 @@ public class radiobuttons {
 			
 		driver =new ChromeDriver();
 			driver.get("http://www.echoecho.com/htmlforms10.htm");
-			Thread.sleep(1000);
 			driver.manage().window().maximize();
 			
 			int count =driver.findElements(By.xpath("//input[@name='group1']")).size();
