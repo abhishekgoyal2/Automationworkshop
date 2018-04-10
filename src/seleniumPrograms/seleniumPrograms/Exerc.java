@@ -1,5 +1,7 @@
 package seleniumPrograms.seleniumPrograms;
 
+import junit.framework.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,12 +38,32 @@ public class Exerc {
 			System.out.println("print number of link in this segment");
 			
 			System.out.println(Columnsell.findElements(By.tagName("a")).size());
+			String beforeclicking = null ;
+			String afterclicking ;
 			
 			for (int i=0;i<Columnsell.findElements(By.tagName("a")).size();i++)
 			{
-				System.out.println(Columnsell.findElements(By.tagName("a")).get(i).getText());
+//				System.out.println(Columnsell.findElements(By.tagName("a")).get(i).getText());
+				beforeclicking =driver.getTitle();
 				
+				if(Columnsell.findElements(By.tagName("a")).get(i).getText().contains("Site map"))
+						Thread.sleep(1000);
+						{
+					Columnsell.findElements(By.tagName("a")).get(i).click();
+					
+					Thread.sleep(1000);
+				}	
+				
+				break;
 			}
+			
+			afterclicking =driver.getTitle();
+			
+			if(beforeclicking!=(afterclicking));
+			{
+				System.out.println("String do not matches");
+			}
+//			Assert.assertEquals(message, expected, actual);
 			
 			driver.quit();
 	}
