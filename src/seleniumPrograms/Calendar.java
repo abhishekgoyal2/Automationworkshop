@@ -43,6 +43,7 @@ public class Calendar {
 		if(text.equalsIgnoreCase("21"))
 		{
 		driver.findElements(By.className("day")).get(i).click();
+		Thread.sleep(100);
 		break;
 		}
 	}
