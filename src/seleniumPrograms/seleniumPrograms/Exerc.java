@@ -32,6 +32,17 @@ public class Exerc {
 
 			System.out.println(footer.findElements(By.tagName("a")).size());
 			Thread.sleep(2000);
+			WebElement Columnsell= driver.findElement(By.xpath("//*[@id='gf-BIG']/table/tbody/tr/td[2]/ul"));
+			System.out.println("print number of link in this segment");
+			
+			System.out.println(Columnsell.findElements(By.tagName("a")).size());
+			
+			for (int i=0;i<Columnsell.findElements(By.tagName("a")).size();i++)
+			{
+				System.out.println(Columnsell.findElements(By.tagName("a")).get(i).getText());
+				
+			}
+			
 			driver.quit();
 	}
 
