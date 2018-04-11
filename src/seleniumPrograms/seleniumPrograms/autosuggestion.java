@@ -1,6 +1,7 @@
 package seleniumPrograms.seleniumPrograms;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +20,15 @@ public class autosuggestion {
 			driver.manage().window().maximize();
 			driver.findElement(By.xpath("//input[@id='fromPlaceName']")).sendKeys("Beng");
 			driver.findElement(By.xpath("//input[@id='fromPlaceName']")).sendKeys(Keys.DOWN);
+			driver.findElement(By.xpath("//input[@id='fromPlaceName']")).sendKeys(Keys.DOWN);
+			
+			JavascriptExecutor js =  (JavascriptExecutor)driver;
+			
+			String script ="return document.getElementById(\"fromPlaceName\").value;" ;
+			
+			String text =(String) js.executeScript(script);
+			
+			System.out.println(text);
 			
 	}
 
