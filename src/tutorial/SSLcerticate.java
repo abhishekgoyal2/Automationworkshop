@@ -34,5 +34,6 @@ System.out.println("accepted ceriticate");
 System.out.println(pagetitle);
 	}
 	
+	driver.quit();
 }
 }
