@@ -1,11 +1,15 @@
 package CoreJavaASO4;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class quikr {
 
@@ -13,24 +17,28 @@ public class quikr {
 		// TODO Auto-generated method stub
 		
 		WebDriver driver;
+	
 		driver =new FirefoxDriver();
 		driver.get("http://noida.quikr.com/");
 		driver.manage().window().maximize();
 	driver.findElement(By.xpath(".//*[@id='query']")).sendKeys("Car");
+	Thread.sleep(300);
+	driver.findElement(By.xpath(".//*[@id='query']")).sendKeys(Keys.ENTER);
+	Thread.sleep(200);
 		
-		Actions builder =new Actions(driver);
-		
-		 WebElement submit_search = driver.findElement(By.xpath(".//*[@id='submitSearch']"));
-		
-		
-		 Action mousehoverSearch = builder.moveToElement(submit_search).build(); 
-		 mousehoverSearch.perform();
-		 Actions mousehoverSearch1 = builder.moveToElement(submit_search).click(); 
+//		Actions builder =new Actions(driver);
+//		
+//		 WebElement submit_search = driver.findElement(By.xpath(".//*[@id='submitSearch']"));
+//		
+//		
+//		 Action mousehoverSearch = builder.moveToElement(submit_search).build(); 
+//		 mousehoverSearch.perform();
+//		 Actions mousehoverSearch1 = builder.moveToElement(submit_search).click(); 
 
-		 mousehoverSearch1.perform();
+//		 mousehoverSearch1.perform();
 //  driver.findElement(By.xpath("html/body/header/div[3]/div/div/div[2]/a/i[2]"));
 
-		 System.out.println("Search pass able to find submit element");
+		 System.out.println("Search passable to find submit element");
 		 
 		 
 
@@ -52,7 +60,7 @@ public class quikr {
 		
 
 
-	driver.quit();
+//	driver.quit();
 		
 
 	}
