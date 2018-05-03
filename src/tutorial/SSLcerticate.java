@@ -13,9 +13,9 @@ public class SSLcerticate {
 	    WebDriver driver;
 			
 		DesiredCapabilities ch=DesiredCapabilities.chrome();
-		ch.acceptInsecureCerts();
+//		((Object) ch).acceptInsecureCerts();
 		ch.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		ch.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+		ch.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 			
 			ChromeOptions c= new ChromeOptions();
         ch.merge(ch);
